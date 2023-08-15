@@ -9,7 +9,7 @@ const lista = [
 
 const getUserAuthenticated = (users) => {
    {lista.map (user =>{
-    if(user.email === user.email){
+    if(user.email === user.email && user.password === user.password){
         return users;
     }
     else{
@@ -22,4 +22,5 @@ const getUserAuthenticated = (users) => {
 const getUsers = () =>{
     return lista;
 }
+
 export { getUsers, getUserAuthenticated };
