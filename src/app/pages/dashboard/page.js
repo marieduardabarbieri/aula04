@@ -1,11 +1,15 @@
 import { getUsers } from "@/app/functions/handlerAcessAPI";
 
 export default async function Dashboard() {
-   
+   const listar = getUsers();
+
     return (
         <div>
-            <h1>Dashboard</h1>
-            
+            {listar.map((user, index) =>{
+                <div key={index}>
+                    <p>Nome: {user.name}</p>
+                </div>
+            })}
         </div>
     );
 };
