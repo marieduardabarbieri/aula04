@@ -7,8 +7,8 @@ export default async function Dashboard() {
         <div>
             {listar.map((user, index) =>{
                 <div key={index}>
-                    <p>Nome: {user.name}</p>
-                    
+                    <p>Nome: {user.email}</p>
+                    <p>Nome: {user.password}</p>
                 </div>
             })}
         </div>
