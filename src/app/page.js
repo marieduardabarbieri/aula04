@@ -3,14 +3,14 @@ import { useState } from "react";
 import handlerAcessUser from "./functions/handlerAcess"
 import { useRouter } from "next/navigation";
 import { ToastContainer, toast } from "react-toastify";
-import 'react-toastify/dist/react-toastify.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Login() {
   const [user, setUser] = useState({
     email: '',
     password: '',
   });
-  const { push, refresh } = useRouter();
+  const { push } = useRouter();
 
   const handlerLogin = async (e) => {
     e.preventDefault();
@@ -21,9 +21,10 @@ export default function Login() {
       }
       push('/pages/dashboard');
     } catch {
-      toast.error("Erro na aplicação. Não se preocipe usuário, foi cagada do desenvolvedor ;)")
+      toast.error("Erro na aplicação. Não se preocupe, usuário, foi cagada do desenvolvedor ;)")
     }
   }
+
   return (
     <div>
       <h1>Login</h1>
