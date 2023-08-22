@@ -2,6 +2,8 @@
 import { useState } from "react";
 import handlerAcessUser from "./functions/handlerAcess"
 import { useRouter } from "next/navigation";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/react-toastify.css';
 
 export default function Login() {
   const [user, setUser] = useState({
