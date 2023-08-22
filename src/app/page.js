@@ -15,10 +15,13 @@ export default function Login() {
   const handlerLogin = async (e) => {
     e.preventDefault();
     try {
-      await handlerAcessUser(user);
+      const userAutent = await handlerAcessUser(user);
+      if(userAutent.token === undefined){
+        toast.error("Erro no email e senha. Ops! A culpa é sua, usuário ;(")
+      }
       push('/pages/dashboard');
     } catch {
-      refresh();
+      toast.error("Erro na aplicação. Não se preocipe usuário, foi cagada do desenvolvedor ;)")
     }
   }
   return (
@@ -42,6 +45,7 @@ export default function Login() {
         </input>
         <button>Entrar</button>
       </form>
+      <ToastContainer/>
     </div>
   )
 }
