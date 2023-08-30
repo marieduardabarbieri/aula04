@@ -4,10 +4,6 @@ import Link from "next/link";
 import { useRouter } from "next/navigation"
 import '@/app/globals.css';
 
-export const metadata = {
-    title: 'Register user',
-    description: 'Project for class PTAC'
-}
 
 export default function DashboardLayout({children}){
     const {push} = useRouter();

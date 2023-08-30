@@ -1,4 +1,8 @@
 
+export const metadata = {
+    title: 'Register user',
+    description: 'Project for class PTAC'
+}
 
 export default function DashboardRegister() {
     return (

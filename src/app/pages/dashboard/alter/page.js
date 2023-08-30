@@ -1,4 +1,7 @@
-
+export const metadata = {
+    title: 'Alter user',
+    description: 'Project for class PTAC'
+}
 
 export default function DashboardAlter(){
     return(
