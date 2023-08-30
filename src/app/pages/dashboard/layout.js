@@ -1,6 +1,8 @@
 'use client'
 import Cookies from "js-cookie";
+import Link from "next/link";
 import { useRouter } from "next/navigation"
+import '@/app/globals.css';
 
 export const metadata = {
     title: 'Register user',
@@ -18,10 +20,16 @@ export default function DashboardLayout({children}){
 
     return(
         <body>
-            <div>
-                <p>menu</p>
-                <div>{children}</div>
-            </div>
+            <nav>
+                <ul className="menu">
+                <Link id="link" href="/">Home</Link>
+                <Link id="link" href="/pages/dashboard/alter">Aterar Cadastro</Link>
+                <Link id="link" href="/pages/dashboard/register">Registre-se</Link>
+                <Link id="link" href="#">Fale Conosco</Link>
+                <Link id="link" href="#">Configurações</Link>
+                </ul>
+            </nav>
+            <div>{children}</div>
         </body>
     )
 }

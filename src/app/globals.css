@@ -1,4 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 
+nav ul{
+    background-color: rgba(2, 23, 55, 0.859);
+    padding: 35px 20px;
+}
+
+nav ul #link{
+    color: white;
+    padding: 0px 25px;
+    text-decoration: none;
+    font-size: 17px;
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 1px; /*espaçamento entre letras*/
+}
 .container{
     color: rgb(235, 228, 228);
     position: absolute;
@@ -16,7 +33,7 @@ h1{
 }
 
 hr{
-    margin-bottom: 50px;
+    margin: 30px 0px 40px 0px;
 }
 
 .divInput{
@@ -50,5 +67,6 @@ input::placeholder {
     text-align: center;
     border-radius: 5px;
     margin-top: 30px;
+    letter-spacing: 1px; /*espaçamento entre letras*/
 }
 
