@@ -1,11 +1,12 @@
-/*import './globals.css';*/
+
 
 export default function DashboardRegister() {
     return (
         <div>
             <div className="container">
 
-                <h1>Login</h1>
+                <h1>Registre-se</h1>
+                <hr/>
                 <form >
                     <div class="divInput">
                         <input
@@ -28,7 +29,7 @@ export default function DashboardRegister() {
                             placeholder='Senha'
                             type='password'>
                         </input></div>
-                    <button className="enviar">Entrar</button>
+                    <button className="enviar">Registrar</button>
                 </form>
             </div>
         </div>

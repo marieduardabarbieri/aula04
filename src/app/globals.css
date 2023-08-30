@@ -1,52 +1,54 @@
+
 .container{
-    color: white;
+    color: rgb(235, 228, 228);
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 15px;
-    border-radius: 15px;
+    background-color: rgba(0, 33, 63, 0.837);
+    padding: 10px 50px 20px 20px;
+    border-radius: 5px;
     width: 20%;
+}
+
+h1{
+    text-align: center;
+}
+
+hr{
+    margin-bottom: 50px;
 }
 
 .divInput{
     position: relative;
+    padding-bottom: 30px;
 }
 
 .input{
     background: none;
     border: none;
     border-bottom: 1px solid white;
-    outline: none;
     color: white;
-    font-size: 15px;
+    font-size: 18px;
     width: 100%;
-    letter-spacing: 2px;
+    padding: 10px;
 }
 
 
-label{
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    pointer-events: none;
-    transition: .5s;
-}
+input::placeholder {
+    color: white;
+  }
 
 .enviar{
     background-color: white;
-    width: 100%;
+    width: 110%;
     border: 1px solid black;
-    border-radius: 5px;
-    padding: 15px;
-    color: black;
-    font-size: 15px;
+    padding: 10px 5px;
+    color: rgb(6, 44, 73);
+    font-size: 17px;
     cursor: pointer;
-    border-radius: 10px;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 30px;
 }
-.enviar:hover{
-    background-color: black;
-    color: white;
-    border: 1px solid white;
-}
+

@@ -1,10 +1,12 @@
+
+
 export default function DashboardAlter(){
     return(
         <div>
              <div>
             <div className="container">
 
-                <h1>Login</h1>
+                <h1>Altere seu Cadastro</h1><hr/>
                 <form >
                     <div class="divInput">
                         <input
@@ -27,7 +29,7 @@ export default function DashboardAlter(){
                             placeholder='Senha'
                             type='password'>
                         </input></div>
-                    <button className="enviar">Entrar</button>
+                    <button className="enviar">Alterar</button>
                 </form>
             </div>
         </div>
