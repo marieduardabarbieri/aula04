@@ -6,7 +6,6 @@ import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import './globals.css';
 
-
 export default function Login() {
   const [user, setUser] = useState({
     email: '',
@@ -19,18 +18,18 @@ export default function Login() {
     try {
       const userAutent = await handlerAcessUser(user);
       if(userAutent.token === undefined){
-        toast.error("Erro no email e senha. Ops! A culpa é sua, usuário ;(")
+        toast.error("Erro no email e senha. Ops! A culpa é sua ;(")
       }
       push('/pages/dashboard');
     } catch {
-      toast.error("Erro na aplicação. Não se preocupe, usuário, foi cagada do desenvolvedor ;)")
+      toast.error("Erro na aplicação. Não se preocupe, foi cagada do desenvolvedor ;)")
     }
   }
 
   return (
     <div className="container">
 
-      <h1>Login</h1>
+      <h1>Login</h1><hr/>
       <form onSubmit={handlerLogin}>
       <div class="divInput"> 
       <input

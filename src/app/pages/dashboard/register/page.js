@@ -8,10 +8,8 @@ export default function DashboardRegister() {
     return (
         <div>
             <div className="container">
-
-                <h1>Registre-se</h1>
-                <hr/>
-                <form >
+            <h1>Registre-se</h1><hr/>
+               <form >
                     <div class="divInput">
                         <input
                             className="input"
@@ -33,7 +31,7 @@ export default function DashboardRegister() {
                             placeholder='Senha'
                             type='password'>
                         </input></div>
-                    <button className="enviar">Registrar</button>
+                    <button className="enviar">Registrar </button>
                 </form>
             </div>
         </div>

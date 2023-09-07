@@ -6,7 +6,6 @@ export const metadata = {
 export default function DashboardAlter(){
     return(
         <div>
-             <div>
             <div className="container">
 
                 <h1>Altere seu Cadastro</h1><hr/>
@@ -35,7 +34,7 @@ export default function DashboardAlter(){
                     <button className="enviar">Alterar</button>
                 </form>
             </div>
-        </div>
+       
         </div>
     )
 }

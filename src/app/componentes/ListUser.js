@@ -5,8 +5,8 @@ export default async function ListUser({lista}){
         <div>
              {lista.map((user, index) => {
                 return(
-                <div key={index}>
-                    <p> {user.name}</p>
+                <div className="usuarioEsp" key={index}>
+                     <p> {user.name}</p>
                 </div>
                 ) })}
         </div>

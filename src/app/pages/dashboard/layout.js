@@ -23,6 +23,7 @@ export default function DashboardLayout({children}){
                 <Link id="link" href="/pages/dashboard/register">Registre-se</Link>
                 <Link id="link" href="#">Fale Conosco</Link>
                 <Link id="link" href="#">Configurações</Link>
+                <button id="link" className="botaoSair" onClick={logout}>Sair</button>
                 </ul>
             </nav>
             <div>{children}</div>

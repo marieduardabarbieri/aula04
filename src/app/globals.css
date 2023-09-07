@@ -1,8 +1,12 @@
 *{
     margin: 0;
     padding: 0;
+   
 }
 
+body{
+    background-color: rgba(244, 244, 244, 0.615);
+}
 nav ul{
     background-color: rgba(2, 23, 55, 0.859);
     padding: 35px 20px;
@@ -16,20 +20,40 @@ nav ul #link{
     font-family: 'Times New Roman', Times, serif;
     letter-spacing: 1px; /*espaçamento entre letras*/
 }
+
+.botaoSair{
+     background-color: rgba(0, 33, 63, 0.837);
+     border-radius: 2px;
+     border: 1px solid white;
+     
+    cursor: pointer;
+}
+.divGeral{
+    margin: 50px 0px;
+}
 .container{
-    color: rgb(235, 228, 228);
+    color: rgba(0, 33, 63, 0.837);
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    background-color: rgba(0, 33, 63, 0.837);
-    padding: 10px 50px 20px 20px;
-    border-radius: 5px;
+    background-color:rgb(255, 255, 255) ;
+    padding: 50px 40px;
+    border-radius: 3px;
+    border: 1px solid rgba(0, 33, 63, 0.837);
     width: 20%;
+    text-align: center;
 }
 
-h1{
+h1, h2{
     text-align: center;
+    color: rgba(0, 33, 63, 0.837);
+}
+
+h2{
+    color: rgba(0, 33, 63, 0.837);
+    font-size: 30px;
+    margin: 30px;
 }
 
 hr{
@@ -44,24 +68,24 @@ hr{
 .input{
     background: none;
     border: none;
-    border-bottom: 1px solid white;
-    color: white;
+    border-bottom: 1px solid rgba(0, 33, 63, 0.837);
+    color: rgba(0, 33, 63, 0.837);
     font-size: 18px;
     width: 100%;
-    padding: 10px;
+    padding: 10px 0px;
 }
 
 
 input::placeholder {
-    color: white;
+    color: rgba(0, 33, 63, 0.837);
   }
 
 .enviar{
-    background-color: white;
-    width: 110%;
+    background-color: rgba(0, 33, 63, 0.837);
+    width: 100%;
     border: 1px solid black;
     padding: 10px 5px;
-    color: rgb(6, 44, 73);
+    color: white;
     font-size: 17px;
     cursor: pointer;
     text-align: center;
@@ -69,4 +93,17 @@ input::placeholder {
     margin-top: 30px;
     letter-spacing: 1px; /*espaçamento entre letras*/
 }
+ 
+.usuarioEsp{
+    background-color: rgb(255, 255, 255);
+    margin: 10px 70px;
+    padding: 15px;
+    border-radius: 3px;
+    color: rgba(0, 33, 63, 0.837);
+    font-size: 19px;
+    border: 1px solid rgba(0, 33, 63, 0.837);
+}
 
+.carregamentoUsuarios{
+    margin: 40px 0px;
+}

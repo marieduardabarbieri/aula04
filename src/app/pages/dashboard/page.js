@@ -5,17 +5,19 @@ import ListUser from "@/app/componentes/ListUser";
 export const metadata = {
     title: 'Users ',
     description: 'Project for class PTAC'
-  }
-  
+}
+
 export default async function Dashboard() {
-   const lista = getUsers();
-   //console.log(listar)
+    const lista = getUsers();
+    //console.log(listar)
     return (
-        <div>
-            <h2>Nome dos Usuários cadastrados</h2>
+        <div className="carregamentoUsuarios"> 
+            <h2> Usuários Cadastrados</h2>
             <Suspense fallback={<p>Carregando usuários...</p>}>
-            <ListUser lista={lista}/>
-        </Suspense>
+                <div className="divLista" > 
+                     <ListUser lista={lista} />
+                </div>
+            </Suspense>
         </div>
     );
 };//falta listar
