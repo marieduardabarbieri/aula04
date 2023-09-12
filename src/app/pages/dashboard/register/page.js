@@ -1,3 +1,6 @@
+'use client'
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';  //importação da estilização da caixinha de notificação
 
 export const metadata = {
     title: 'Register user',
@@ -5,6 +8,16 @@ export const metadata = {
 }
 
 export default function DashboardRegister() {
+
+    const handlerRegister =  (e) => {
+        e.preventDefault(); //previne o envio do formulario de alterar
+        try {
+            toast.success("Usuário registrado com sucesso!!!"); 
+        } catch {
+          toast.error("Erro no registro do usuário. Tente novamente!"); //não tem como cair no erro, pois não tem condição
+        }
+      } 
+
     return (
         <div>
             <div className="container">
@@ -31,8 +44,9 @@ export default function DashboardRegister() {
                             placeholder='Senha'
                             type='password'>
                         </input></div>
-                    <button className="enviar">Registrar </button>
+                    <button className="enviar" onClick={handlerRegister} >Registrar </button>
                 </form>
+                <ToastContainer/>
             </div>
         </div>
     )
