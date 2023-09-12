@@ -1,9 +1,23 @@
+'use client'
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
 export const metadata = {
     title: 'Alter user',
     description: 'Project for class PTAC'
 }
 
 export default function DashboardAlter(){
+
+    const handlerAlterar =  (e) => {
+        e.preventDefault(); //previne o envio do formulario de alterar
+        try {
+            toast.success("Usuário alterado com sucesso!!!"); 
+        } catch {
+          toast.error("Erro na alteração do usuário. Tente novamente!"); //não tem como cair no erro, pois não tem condição
+        }
+      }    
+
     return(
         <div>
             <div className="container">
@@ -31,10 +45,10 @@ export default function DashboardAlter(){
                             placeholder='Senha'
                             type='password'>
                         </input></div>
-                    <button className="enviar">Alterar</button>
+                    <button className="enviar" onClick={handlerAlterar}>Alterar</button>
                 </form>
+                <ToastContainer/>
             </div>
-       
         </div>
     )
 }
