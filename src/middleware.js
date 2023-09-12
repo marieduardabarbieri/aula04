@@ -9,8 +9,8 @@ export const middleware = (request) => {
     const urlDash = new URL('/pages/dashboard', request.url);
     const isTokenValidated = validateToken(token);
 
-    if (!isTokenValidated || !token) {
-        if (request.nextUrl.pathname === '/pages/dashboard') {
+    if (!isTokenValidated || !token) {   
+        if (request.nextUrl.pathname === '/pages/dashboard') { //caminho errado, porem está funcionado
             return NextResponse.redirect(urlLogin);
         }
     }
