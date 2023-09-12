@@ -10,10 +10,15 @@ export const middleware = (request) => {
     const isTokenValidated = validateToken(token);
 
     if (!isTokenValidated || !token) {   
-        if (request.nextUrl.pathname === '/pages/dashboard') { //caminho errado, porem está funcionado
+        if (
+            request.nextUrl.pathname === '/pages/dashboard' ||
+            request.nextUrl.pathname === '/pages/dashboard/alter' ||
+            request.nextUrl.pathname === '/pages/dashboard/register'
+             ) { 
             return NextResponse.redirect(urlLogin);
         }
     }
+
     if (isTokenValidated) {
         if (request.nextUrl.pathname === '/') {
             return NextResponse.redirect(urlDash);
@@ -22,6 +27,15 @@ export const middleware = (request) => {
     NextResponse.next();
 };
 export const config = {
-    matcher: ['/', '/pages/dashboard']
+    matcher: ['/', '/pages/dashboard', '/pages/dashboard/register', '/pages/dashboard/alter']
 };
 
+/**
+ * 
+ * 
+    if (isTokenValidated) {
+        if (request.nextUrl.pathname === '/') {
+            return NextResponse.redirect(urlDash);
+        }
+    }
+ */
