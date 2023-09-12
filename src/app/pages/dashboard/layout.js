@@ -18,7 +18,7 @@ export default function DashboardLayout({children}){
         <body>
             <nav>
                 <ul className="menu">
-                <Link id="link" href="/">Home</Link>
+                <Link id="link" href="/pages/dashboard">Home</Link>
                 <Link id="link" href="/pages/dashboard/alter">Aterar Cadastro</Link>
                 <Link id="link" href="/pages/dashboard/register">Registre-se</Link>
                 <Link id="link" href="#">Fale Conosco</Link>
