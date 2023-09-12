@@ -101,3 +101,8 @@ input::placeholder {
 .carregamentoUsuarios{
     margin: 40px 0px;
 }
+
+.fraseCarreg{
+    text-align: center;
+    font-size: 18px;
+}
