@@ -14,28 +14,14 @@ export const middleware = (request) => {
             request.nextUrl.pathname === '/pages/dashboard' ||
             request.nextUrl.pathname === '/pages/dashboard/alter' ||
             request.nextUrl.pathname === '/pages/dashboard/register'
-             ) { 
+             ){ 
             return NextResponse.redirect(urlLogin);
         }
-    }
+     }
 
-    if (isTokenValidated) {
-        if (request.nextUrl.pathname === '/') {
-            return NextResponse.redirect(urlDash);
-        }
-    }
     NextResponse.next();
 };
 export const config = {
     matcher: ['/', '/pages/dashboard', '/pages/dashboard/register', '/pages/dashboard/alter']
 };
 
-/**
- * 
- * 
-    if (isTokenValidated) {
-        if (request.nextUrl.pathname === '/') {
-            return NextResponse.redirect(urlDash);
-        }
-    }
- */
