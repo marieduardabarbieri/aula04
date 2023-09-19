@@ -13,7 +13,7 @@ export default function Login() {
   });
   const { push } = useRouter();
 
-  const handlerLogin = async (e) => {
+  const handlerLogin = async (e) => {  //Toast para notificar usuário caso não esteja devidamente autenticado 
     e.preventDefault();
     try {
       const userAutent = await handlerAcessUser(user);

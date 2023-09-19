@@ -14,11 +14,11 @@ export default async function Dashboard() {
     return (
         <div className="carregamentoUsuarios"> 
             <h2> Usuários Cadastrados</h2>
-            <Suspense  fallback={<p className="fraseCarreg">Carregando usuários. Espere concluir carregamento...</p>}>
+            <Suspense  fallback={<p className="fraseCarreg">Carregando usuários. Espere concluir carregamento...</p>}> 
                 <div className="divLista" > 
                      <ListUser lista={lista} />
                 </div>
             </Suspense>
         </div>
     );
-};//falta listar
+};

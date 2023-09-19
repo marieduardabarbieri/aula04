@@ -9,13 +9,13 @@ export const middleware = (request) => {
     const urlDash = new URL('/pages/dashboard', request.url);
     const isTokenValidated = validateToken(token);
 
-    if (!isTokenValidated || !token) {   
+    if (!isTokenValidated || !token) {    //se o usuário não for previamente autenticado ele não poderá entrar nas seguintes páginas abaixo 
         if (
             request.nextUrl.pathname === '/pages/dashboard' ||
             request.nextUrl.pathname === '/pages/dashboard/alter' ||
             request.nextUrl.pathname === '/pages/dashboard/register'
              ){ 
-            return NextResponse.redirect(urlLogin);
+            return NextResponse.redirect(urlLogin); //e será retornado para o login para tentar novamente
         }
      }
 

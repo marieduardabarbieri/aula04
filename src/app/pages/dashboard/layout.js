@@ -8,7 +8,7 @@ import '@/app/globals.css';
 export default function DashboardLayout({children}){
     const {push} = useRouter();
 
-    const logout = (e) =>{
+    const logout = (e) =>{ //constante para ser redirecionado para login(sair)
         e.preventDefault();
         Cookies.remove('token');
         push('/')

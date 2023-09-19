@@ -2,15 +2,15 @@
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';  //importação da estilização da caixinha de notificação
 
-export const metadata = {
+export const metadata = {  //title
     title: 'Register user',
     description: 'Project for class PTAC'
 }
 
 export default function DashboardRegister() {
 
-    const handlerRegister =  (e) => {
-        e.preventDefault(); //previne o envio do formulario de alterar
+    const handlerRegister =  (e) => {  //aviso para envio com sucesso de formulario
+        e.preventDefault(); 
         try {
             toast.success("Usuário registrado com sucesso!!!"); 
         } catch {

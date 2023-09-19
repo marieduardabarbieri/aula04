@@ -9,7 +9,7 @@ export const metadata = {
 
 export default function DashboardAlter(){
 
-    const handlerAlterar =  (e) => {
+    const handlerAlterar =  (e) => {  //serve para a criação de uma notificação, nesse caso, para informar se usuário foi alterado ou não com a ajuda do Toast
         e.preventDefault(); //previne o envio do formulario de alterar
         try {
             toast.success("Usuário alterado com sucesso!!!"); 

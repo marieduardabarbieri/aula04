@@ -21,7 +21,7 @@ const lista = [
     }
 ];
 
-const getUserAuthenticated = (users) => {
+const getUserAuthenticated = (users) => { //constante de vereficação de autenticação
     let userAutent = {}
     {
         lista.map(user => {
@@ -33,7 +33,7 @@ const getUserAuthenticated = (users) => {
     }
 }
 
-const getUsers = () => {
+const getUsers = () => { //retorno dos usuários autenticados
     return lista;
 }
 

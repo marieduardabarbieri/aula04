@@ -1,5 +1,7 @@
-import { decode } from "jsonwebtoken";
-const validateToken = (token)=>{
+
+import { decode } from "jsonwebtoken";  //jwt instaldo
+
+const validateToken = (token)=>{  //validação do token
     const isTokenValidate = decode(token);
     if(isTokenValidate){
         return token= true
