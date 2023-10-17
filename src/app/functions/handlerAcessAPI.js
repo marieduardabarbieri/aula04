@@ -2,7 +2,7 @@
 
 const url = "https://aula-17-10-eta.vercel.app";
 
-const getUserAuthenticated = (user) => { //constante de vereficação de autenticação
+const getUserAuthenticated = async (user) => { //constante de vereficação de autenticação
    const responseOfApi = await fetch(url + "/user/authenticate",
      {
         method: "POST",
