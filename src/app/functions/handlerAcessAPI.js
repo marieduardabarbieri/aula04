@@ -16,7 +16,7 @@ const getUserAuthenticated = async (user) => { //constante de vereficação de a
 
 const getUsers = async () => { //retorno dos usuários autenticados
     const responseOfApiGet = await fetch(url + "/users")
-    const usersGetUsers = await responseOfApiGet.json;
+    const usersGetUsers = await responseOfApiGet.json();
     return usersGetUsers;
 }
 
