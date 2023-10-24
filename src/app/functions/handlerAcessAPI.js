@@ -1,4 +1,4 @@
-'use server'
+'use server';
 
 const url = "https://aula-17-10-eta.vercel.app";
 
