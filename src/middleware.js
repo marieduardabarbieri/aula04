@@ -14,13 +14,15 @@ export const middleware = async (request) => {
             request.nextUrl.pathname === '/pages/dashboard' ||
             request.nextUrl.pathname === '/pages/dashboard/alter' ||
             request.nextUrl.pathname === '/pages/dashboard/register'
-             ){ 
+        ) {
             return NextResponse.redirect(urlLogin); //e será retornado para o login para tentar novamente
         }
-     }
-       if(isTokenValidated) {
-        return NextResponse.redirect(urlDash);//deu errado
-      }
+    }
+    if (isTokenValidated) {
+        if (request.nextUrl.pathname === '/') {
+            return NextResponse.redirect(urlDash);//deu errado
+        }
+    }
 
     NextResponse.next();
 };
