@@ -31,14 +31,6 @@ export default function Login() {
 
       <h1>Login</h1><hr/>
       <form onSubmit={handlerLogin}>
-      <div class="divInput"> 
-      <input
-          className="input"
-          placeholder='Nome'
-          type="name"
-          onChange={(e) => { setUser({ ...user, name: e.target.value }) }}>
-        </input>
-        </div>
 
         <div class="divInput">
         <input

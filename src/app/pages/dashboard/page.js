@@ -9,7 +9,7 @@ export const metadata = {
 
 export default async function Dashboard() {
   
-    const lista = getUsers();
+    const lista = await getUsers();
     //console.log(listar)
     return (
         <div className="carregamentoUsuarios"> 
