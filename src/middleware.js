@@ -18,6 +18,9 @@ export const middleware = async (request) => {
             return NextResponse.redirect(urlLogin); //e será retornado para o login para tentar novamente
         }
      }
+       if(isTokenValidated) {
+        return NextResponse.redirect(urlDash);//deu errado
+      }
 
     NextResponse.next();
 };
