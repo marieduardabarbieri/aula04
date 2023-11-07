@@ -3,7 +3,7 @@
 const url = "https://aula-17-10-pink.vercel.app";
 
 const getUserAuthenticated = async (user) => { //constante de vereficação de autenticação
-   const responseOfApi = await fetch(url + "/user/authenticated",
+   const responseOfApi = await fetch(url + "/user/authenticated", //aplicação do endpoint
       {
          method: "POST",
          headers: { "Content-Type": "application/json" },
@@ -25,4 +25,18 @@ const getUsers = async () => { //retorno dos usuários autenticados
    }
 }
 
-export { getUsers, getUserAuthenticated };
+const postUser = async (user) =>{
+   try{ 
+      const responseOfApi = await fetch(url + "/user", {
+         method: 'POST',
+         headers: {'Content-Type': 'Application/json'},
+         body: JSON.stringify(user)
+      });
+      const userSave = await responseOfApi.json();
+      return userSave;
+   } catch{
+      return null;
+   }
+}
+
+export { getUsers, getUserAuthenticated, postUser };
