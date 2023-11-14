@@ -15,18 +15,9 @@ const getUserAuthenticated = async (user) => { //constante de vereficação de a
    return userAuth;
 }
 
-const getUsers = async () => { //retorno dos usuários autenticados
-   try {
-      const responseOfApiGet = await fetch(url + "/users")
-      const usersGetUsers = await responseOfApiGet.json();
-      return usersGetUsers;
-   } catch {
-      return [];
-   }
-}
-
 const postUser = async (user) =>{
    try{ 
+      console.log(user)
       const responseOfApi = await fetch(url + "/user", {
          method: 'POST',
          headers: {'Content-Type': 'Application/json'},
@@ -39,4 +30,12 @@ const postUser = async (user) =>{
    }
 }
 
-export { getUsers, getUserAuthenticated, postUser };
+const getUsers = async () => { //retorno dos usuários autenticados
+      const responseOfApi = await fetch(url + "/users",
+     {next: {revalidate: 10}});
+      const usersGetUsers = await responseOfApi.json();
+      return usersGetUsers;
+  
+}
+
+export { getUserAuthenticated, postUser, getUsers };

@@ -23,11 +23,9 @@ export default function DashboardRegister() {
     const handlerFormRegister = async (event) => {  //aviso para envio com sucesso de formulario
         e.preventDefault(); 
         try {
+            console.log(user)
             await postUser(user);
-            await new Promise((resolve) => {
-                toast.success("Usuário registrado com sucesso!!!"); 
-                setTimeout(resolve, 5000);
-            })
+          
             return push("/pages/dashboard");
         } catch {
           toast.error("Erro no registro do usuário. Tente novamente!"); //não tem como cair no erro, pois não tem condição
@@ -42,7 +40,7 @@ export default function DashboardRegister() {
                     <div class="divInput">
                         <input
                             className="input"
-                            placeholder='Nome'
+                            placeholder="Nome"
                             type="name"
                             onChange={(e) => { setUser({ ...user, name: e.target.value }) }}>
                         </input>
@@ -51,7 +49,7 @@ export default function DashboardRegister() {
                     <div class="divInput">
                         <input
                             className="input"
-                            placeholder='E-mail'
+                            placeholder="E-mail"
                             type="email"
                             onChange={(e) => { setUser({ ...user, email: e.target.value }) }}>
                         </input></div>
@@ -59,11 +57,11 @@ export default function DashboardRegister() {
                     <div class="divInput">
                         <input
                             className="input"
-                            placeholder='Senha'
-                            type='password'
+                            placeholder="Senha"
+                            type="password"
                             onChange={(e) => { setUser({ ...user, password: e.target.value }) }}>
                         </input></div>
-                    <button className="enviar"  >Registrar </button>
+                    <button className="enviar">Registrar </button>
                 </form>
                 <ToastContainer/>
             </div>
