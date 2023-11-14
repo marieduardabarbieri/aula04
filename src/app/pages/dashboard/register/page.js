@@ -38,12 +38,13 @@ export default function DashboardRegister() {
         <div>
             <div className="container">
             <h1>Registre-se</h1><hr/>
-               <form >
+               <form onSubmit={handlerFormRegister}>
                     <div class="divInput">
                         <input
                             className="input"
                             placeholder='Nome'
-                            type="name">
+                            type="name"
+                            onChange={(e) => { setUser({ ...user, name: e.target.value }) }}>
                         </input>
                     </div>
 
@@ -51,16 +52,18 @@ export default function DashboardRegister() {
                         <input
                             className="input"
                             placeholder='E-mail'
-                            type="email">
+                            type="email"
+                            onChange={(e) => { setUser({ ...user, email: e.target.value }) }}>
                         </input></div>
 
                     <div class="divInput">
                         <input
                             className="input"
                             placeholder='Senha'
-                            type='password'>
+                            type='password'
+                            onChange={(e) => { setUser({ ...user, password: e.target.value }) }}>
                         </input></div>
-                    <button className="enviar" onClick={handlerFormRegister} >Registrar </button>
+                    <button className="enviar"  >Registrar </button>
                 </form>
                 <ToastContainer/>
             </div>
