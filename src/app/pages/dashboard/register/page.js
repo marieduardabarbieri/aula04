@@ -21,11 +21,9 @@ export default function DashboardRegister() {
     const { push } = useRouter();
 
     const handlerFormRegister = async (event) => {  //aviso para envio com sucesso de formulario
-        e.preventDefault(); 
+        event.preventDefault(); 
         try {
-            console.log(user)
             await postUser(user);
-          
             return push("/pages/dashboard");
         } catch {
           toast.error("Erro no registro do usuário. Tente novamente!"); //não tem como cair no erro, pois não tem condição
@@ -37,7 +35,7 @@ export default function DashboardRegister() {
             <div className="container">
             <h1>Registre-se</h1><hr/>
                <form onSubmit={handlerFormRegister}>
-                    <div class="divInput">
+                    <div className="divInput">
                         <input
                             className="input"
                             placeholder="Nome"
@@ -46,7 +44,7 @@ export default function DashboardRegister() {
                         </input>
                     </div>
 
-                    <div class="divInput">
+                    <div className="divInput">
                         <input
                             className="input"
                             placeholder="E-mail"
@@ -54,7 +52,7 @@ export default function DashboardRegister() {
                             onChange={(e) => { setUser({ ...user, email: e.target.value }) }}>
                         </input></div>
 
-                    <div class="divInput">
+                    <div className="divInput">
                         <input
                             className="input"
                             placeholder="Senha"

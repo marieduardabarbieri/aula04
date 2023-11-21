@@ -6,7 +6,6 @@ const validateToken = async (token)=>{  //validação do token
     const isTokenValidate = await jwtVerify( token, 
         new TextEncoder().encode(secret));
         if(isTokenValidate){
-          console.log(isTokenValidate)  
           return true;
         }
       } catch{

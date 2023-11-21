@@ -32,7 +32,7 @@ const postUser = async (user) =>{
 
 const getUsers = async () => { //retorno dos usuários autenticados
       const responseOfApi = await fetch(url + "/users",
-     {next: {revalidate: 10}});
+     {next: {revalidate: 5}});
       const usersGetUsers = await responseOfApi.json();
       return usersGetUsers;
   
