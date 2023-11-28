@@ -1,4 +1,6 @@
 'use client'
+import { updateUser } from "@/app/functions/handlerAcessAPI";
+import { useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -7,14 +9,30 @@ export const metadata = {
     description: 'Project for class PTAC'
 }
 
-export default function DashboardAlter(){
+export default function DashboardAlter({params}){
+    const[user, setUser] = useState({
+        name: '',
+        email: '',
+        password: ''
+    });
+    const { push } = useRouter();
 
-    const handlerAlterar =  (e) => {  //serve para a criação de uma notificação, nesse caso, para informar se usuário foi alterado ou não com a ajuda do Toast
+    useEffect(() =>{
+        const findUser = async () =>{
+            const userFind = await getUser(params.id);
+            setUser({...user, name: userFind.name, email: userFind.email});
+        }
+        findUser();
+    }, []);
+    
+    const handlerAlterar = async (e) => {  
         e.preventDefault(); //previne o envio do formulario de alterar
         try {
+            await updateUser(user, params.id);
+            return push("/pages/dashboard");
             toast.success("Usuário alterado com sucesso!!!"); 
         } catch {
-          toast.error("Erro na alteração do usuário. Tente novamente!"); //não tem como cair no erro, pois não tem condição
+          toast.error("Erro na alteração do usuário. Tente novamente!"); 
         }
       }    
 
