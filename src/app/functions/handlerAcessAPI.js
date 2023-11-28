@@ -1,5 +1,7 @@
 'use server';
 
+import { cookies } from "next/dist/client/components/headers";
+
 const url = "https://aula-17-10-pink.vercel.app";
 
 const getUserAuthenticated = async (user) => { //constante de vereficação de autenticação
@@ -44,7 +46,7 @@ const updateUser = async (user, id) =>{
       return null;
    }
 }
-
+///falta criar uma getUser para capturar o usuario e o negocio conseguir buscar
 const getUsers = async () => { //retorno dos usuários autenticados
       const responseOfApi = await fetch(url + "/users",
      {next: {revalidate: 5}});
@@ -53,4 +55,21 @@ const getUsers = async () => { //retorno dos usuários autenticados
   
 }
 
-export { getUserAuthenticated, postUser, updateUser, getUsers };
+const getUser = async () => { //retorno dos usuários autenticados
+   const token = cookies().get('token')?.value;
+   try{
+   const responseOfApi = await fetch(`${url}/user/${id}`, {
+      method: 'GET',
+      headers: {
+         'Content-Type': 'Application/json',
+         Cookie: `token=${token}`
+      },
+   });
+   const user = await responseOfApi.json();
+   return user;
+   } catch{
+      return null;
+   }
+}
+
+export { getUserAuthenticated, postUser, updateUser, getUsers, getUser };

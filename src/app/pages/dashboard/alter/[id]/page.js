@@ -1,6 +1,7 @@
 'use client'
 import { updateUser } from "@/app/functions/handlerAcessAPI";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { useRouter } from 'next/navigation';
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -24,7 +25,7 @@ export default function DashboardAlter({params}){
         }
         findUser();
     }, []);
-    
+
     const handlerAlterar = async (e) => {  
         e.preventDefault(); //previne o envio do formulario de alterar
         try {
