@@ -34,8 +34,7 @@ const postUser = async (user) =>{
 
 const updateUser = async (user, id) =>{
    try{ 
-      console.log(user)
-      const responseOfApi = await fetch(url + "/user/", + id, {
+      const responseOfApi = await fetch(url + "/user/" + id, {
          method: 'PUT',
          headers: {'Content-Type': 'Application/json'},
          body: JSON.stringify(user)
@@ -48,25 +47,30 @@ const updateUser = async (user, id) =>{
 }
 ///falta criar uma getUser para capturar o usuario e o negocio conseguir buscar
 const getUsers = async () => { //retorno dos usuários autenticados
-      const responseOfApi = await fetch(url + "/users",
-     {next: {revalidate: 5}});
-      const usersGetUsers = await responseOfApi.json();
-      return usersGetUsers;
-  
+   try{
+      const responseOfApiGET = await fetch(url + "/users",{
+        cache:"no-cache"
+      });
+      const lista = await responseOfApiGET.json(); //formatando a informação p/ formato json
+        console.log(lista)
+      return lista;
+     }catch{
+        return [];
+     }
 }
+    
+
 
 const getUser = async () => { //retorno dos usuários autenticados
-   const token = cookies().get('token')?.value;
    try{
-   const responseOfApi = await fetch(`${url}/user/${id}`, {
+   const responseOfApi = await fetch(url + '/user/' + id, {
       method: 'GET',
       headers: {
          'Content-Type': 'Application/json',
-         Cookie: `token=${token}`
       },
    });
-   const user = await responseOfApi.json();
-   return user;
+   const userGet = await responseOfApi.json();
+   return userGet;
    } catch{
       return null;
    }
